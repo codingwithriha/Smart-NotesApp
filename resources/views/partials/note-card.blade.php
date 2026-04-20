@@ -1,0 +1,1 @@
+<!-- reusable note card component -->
