@@ -6,20 +6,17 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
+        // Pivot table — links notes to categories (Many-to-Many)
+        // One note can have many categories, one category can have many notes
         Schema::create('note_category', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->foreignId('note_id')->constrained()->onDelete('cascade');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->primary(['note_id', 'category_id']); // no duplicates
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('note_category');
