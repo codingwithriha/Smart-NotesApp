@@ -2,63 +2,70 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $categories = $request->user()
+            ->categories()
+            ->withCount('notes')
+            ->orderBy('name')
+            ->get();
+
+        return view('categories.index', compact('categories'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('categories.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required|string|max:80',
+        ]);
+
+        $request->user()->categories()->create($validated);
+
+        return redirect()
+            ->route('categories.index')
+            ->with('status', 'Category created.');
+    }
+
+    public function update(Request $request, Category $category)
+    {
+        $this->authorizeCategory($request, $category);
+
+        $category->update(
+            $request->validate([
+                'name' => 'required|string|max:80',
+            ])
+        );
+
+        return back()->with('status', 'Category updated.');
+    }
+
+    public function destroy(Request $request, Category $category)
+    {
+        $this->authorizeCategory($request, $category);
+
+        $category->delete();
+
+        return back()->with('status', 'Category deleted.');
     }
 
     /**
-     * Display the specified resource.
+     * Centralized ownership check (cleaner than repeating abort_unless)
      */
-    public function show(string $id)
+    private function authorizeCategory(Request $request, Category $category): void
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        abort_unless(
+            $category->user_id === $request->user()->id,
+            403
+        );
     }
 }
