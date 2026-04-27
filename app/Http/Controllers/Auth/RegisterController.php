@@ -14,7 +14,7 @@ class RegisterController extends Controller
     // Show the registration form
     // Route: GET /register
     // -------------------------------------------------------
-    public function showForm()
+    public function showRegistrationForm()
     {
         return view('auth.register');
     }
