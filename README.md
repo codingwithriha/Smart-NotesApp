@@ -1,58 +1,250 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🧠 Smart Notes App with Advanced Admin Dashboard
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A complete **Smart Notes Management System** built with **Laravel & MySQL**, featuring an intuitive user experience, powerful organization tools, and a fully functional **Admin Dashboard** for monitoring and control.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📌 🔗 Demo
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+🎥 **Watch Full Project Demo:**  
+👉 https://youtu.be/5vjn0xql4mw
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## ✨ Key Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 👤 User Panel
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+* 🔐 Secure Authentication (Register, Login, Logout)
+* 📝 Create, Edit, Delete Notes (CRUD)
+* 📌 Pin important notes
+* ❤️ Mark notes as favorites
+* 🎨 Color-coded notes
+* 🗑️ Trash system (Soft delete & restore)
+* 📂 Category management (Many-to-Many)
+* 🏷️ Tag system for flexible organization
+* 🔍 Advanced search (title & content)
+* 🎯 Smart filtering (Pinned, Favorites, Categories, Tags)
+* 🔄 Sorting (Newest, Oldest, Alphabetical)
+* ✍️ Rich Text Editor (bold, lists, headings)
+* 📊 Live word count
+* 📤 Export notes as PDF & TXT
+* 🌙 Dark / Light mode toggle
+* 👤 Profile management
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+---
 
-## Agentic Development
+### 🛠️ Admin Panel
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+* 🔐 Separate Admin Authentication
+* 📊 Dashboard with system insights
+* 👥 Manage all users
+* 🚫 Block / Unblock users
+* ❌ Delete user accounts
+* 📝 View all user notes
+* 🛡️ Content moderation (delete inappropriate notes)
+* 🏷️ Manage categories & tags
+* 📈 Platform analytics:
+  * Total Users 👥
+  * Total Notes 📝
+  * Activity tracking 📊
+
+---
+
+## 📸 Screenshots
+
+### 👤 User Panel
+
+![Dashboard](assets/user-dashboard.png)
+![Light Mode](assets/user-dashboard-light.png)
+![Login](assets/user-login.png)
+![Register](assets/user-register.png)
+![Notes](assets/notes.png)
+![Categories](assets/categories.png)
+![Tags](assets/tags.png)
+![Trash](assets/trash.png)
+![Profile](assets/profile-setting.png)
+
+---
+
+### 🔐 Admin Panel
+
+![Admin Dashboard](assets/admin-dashboard.png)
+![Admin Dashboard Light](assets/admin-dashboard-light.png)
+![Admin Login](assets/admin-login.png)
+![Admin Register](assets/admin-register.png)
+![Users](assets/users.png)
+
+---
+
+## 🛠️ Tech Stack
+
+* 💻 Frontend: Blade, HTML, CSS, JavaScript
+* ⚙️ Backend: Laravel (PHP)
+* 🗄️ Database: MySQL
+* 🎨 Styling: Tailwind CSS
+* 📦 Build Tool: Vite
+
+---
+
+## 📂 Project Structure
 
 ```bash
-composer require laravel/boost --dev
+project-root/
+│
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   │   ├── Admin/
+│   │   │   ├── Auth/
+│   │   │   └── ...
+│   │   └── Middleware/
+│   ├── Models/
+│   └── Providers/
+│
+├── assets/              # README screenshots
+├── bootstrap/
+├── config/
+├── database/
+│   ├── migrations/
+│   └── seeders/
+│
+├── public/
+├── resources/
+│   ├── views/
+│   ├── css/
+│   └── js/
+│
+├── routes/
+├── storage/
+├── tests/
+│
+├── artisan
+├── composer.json
+├── package.json
+└── README.md
+````
 
-php artisan boost:install
+---
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/your-username/smart-notes-app.git
+cd smart-notes-app
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+### 2️⃣ Install Dependencies
 
-## Contributing
+```bash
+composer install
+npm install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 3️⃣ Setup Environment
 
-## Code of Conduct
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 4️⃣ Configure Database
 
-## Security Vulnerabilities
+Update `.env` file with your database credentials.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 5️⃣ Run Migrations
 
-## License
+```bash
+php artisan migrate
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 6️⃣ Start Application
+
+```bash
+php artisan serve
+npm run dev
+```
+
+---
+
+## 🔐 Admin Access
+
+```
+/admin/login
+```
+
+---
+
+## 🧩 Database Relationships
+
+* Users → Notes (One-to-Many)
+* Users → Categories (One-to-Many)
+* Notes ↔ Categories (Many-to-Many)
+* Notes ↔ Tags (Many-to-Many)
+
+---
+
+## 💡 Highlights
+
+* ⚡ Clean and scalable Laravel architecture
+* 🎯 Advanced filtering & search system
+* 🔐 Role-based authentication (User/Admin)
+* 📊 Real-world dashboard implementation
+* 🧩 Optimized database relationships
+* 🎨 Modern UI/UX design
+
+---
+
+## 🚀 Future Enhancements
+
+* 📱 Mobile app version
+* 🔔 Notification system
+* 🤝 Real-time collaboration
+* 🤖 AI-powered smart notes
+
+---
+
+## 👩‍💻 Author
+
+*Riha Shehzadi & Laiba Ijaz* 
+Software Engineer | Frontend & Backend Developer
+
+## 🤝 Collaboration
+
+This project was developed as a collaborative effort.
+
+- 👩‍💻 *Riha Shahzadi*  
+  GitHub: https://github.com/codingwithriha  
+
+- 👩‍💻 *Laiba Ijaz*
+  
+  GitHub: https://github.com/CodingWithLaiba
+  
+---
+
+## ⭐ Credits
+
+This project reflects strong expertise in:
+
+* Full Stack Development (Laravel)
+* UI/UX Design
+* Database Design & Optimization
+* Real-world Application Architecture
+
+---
+
+## ⭐ Show Your Support
+
+If you like this project:
+
+* ⭐ Star the repository
+* 🍴 Fork it
+* 📢 Share it
+
+---
+
+## 📬 Contact
+
+Let’s connect and collaborate 🚀
