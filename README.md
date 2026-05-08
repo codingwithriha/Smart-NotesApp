@@ -388,8 +388,8 @@ npm run dev
 
 * ⚡ Clean and scalable Laravel architecture
 * 🎯 Advanced filtering & search system
-* 🔐 Role-based authentication (User/Admin)
-* 📊 Real-world dashboard implementation
+* 🔐 Role based authentication (User/Admin)
+* 📊 Real world dashboard implementation
 * 🧩 Optimized database relationships
 * 🎨 Modern UI/UX design
 
