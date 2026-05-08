@@ -19,7 +19,7 @@ A complete **Smart Notes Management System** built with **Laravel & MySQL**, fea
 * 📝 Create, Edit, Delete Notes (CRUD)
 * 📌 Pin important notes
 * ❤️ Mark notes as favorites
-* 🎨 Color-coded notes
+* 🎨 Color coded notes
 * 🗑️ Trash system (Soft delete & restore)
 * 📂 Category management (Many-to-Many)
 * 🏷️ Tag system for flexible organization
